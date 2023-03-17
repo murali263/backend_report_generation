@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Certification</title>
+	<style>
+		.inside{
+			width: 28cm !important;
+			height: 35cm !important;
+			overflow-y: hidden !important;
+		}
+		.upskillCertification {
+			background-image: linear-gradient(to bottom, #26c1f6, #00c3df, #00c1ba, #00bc8b, #56b35a);
+			padding: 3em;
+			position: relative;
+			overflow: hidden;
+		}
+
+		.upskillCertification .leftTop,
+		.upskillCertification .rightTop,
+		.upskillCertification .rightBottom {
+			position: absolute;
+		}
+
+		.upskillCertification .leftTop {
+			left: -12em;
+			top: 5em;
+			width: 30%;
+		}
+
+		.upskillCertification .rightTop {
+			right: -15em;
+			top: -3em;
+			width: 55%;
+		}
+
+		.upskillCertification .rightTop img {
+			opacity: 0.5;
+		}
+
+		.upskillCertification .rightBottom {
+			right: -7em;
+			width: 30%;
+			bottom: -5em;
+		}
+
+		.upskillCertification .rightBottom img {
+			opacity: 0.5;
+		}
+
+		.upskillCertification .innerBorder {
+			border: 2px solid #fff;
+			position: relative;
+		}
+
+		.upskillCertification .content {
+			background-color: #fff;
+			margin: 2em;
+			padding: 30px 50px;
+			display: flex;
+			flex-direction: column;
+			position: relative;
+			overflow: hidden;
+			z-index: 1;
+		}
+
+		.upskillCertification .content .innerAsset {
+			position: absolute;
+			top: 0;
+			right: -35px;
+			z-index: -1;
+		}
+
+		.upskillCertification .content .innerAsset img {
+			max-width: 100%;
+		}
+
+		.upskillCertification .content header {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			padding-bottom: 20px;
+		}
+
+		.upskillCertification .content header .logo {
+			width: 80%;
+			margin: 0 !important;
+		}
+
+		.upskillCertification .content header .logo img {
+			max-width: 25%;
+		}
+
+		.upskillCertification .content header .code {
+			width: 20%;
+			text-align: center;
+		}
+
+		.upskillCertification .content header .code .qrCode {
+			width: 50%;
+		}
+
+		.upskillCertification .content header .date {
+			margin-top: 3px;
+			text-align: center;
+		}
+
+		.upskillCertification .content header .date span {
+			font-family: "Montserrat";
+			font-weight: 700;
+			color: #1c273c;
+			opacity: 1;
+			font-size: 14px;
+		}
+
+		.upskillCertification .content .bodyContent {
+			width: 100%;
+			position: relative;
+			text-align: center;
+		}
+
+		.upskillCertification .content .bodyContent .certificateHeading {
+			font-size: 40px;
+			width: 100%;
+			line-height: normal;
+			font-family: 'Algerian' !important;
+			color: #191818 ad;
+			font-weight: 500 !important;
+			position: relative;
+			text-transform: uppercase;
+			padding-bottom: 10px;
+		}
+
+		.upskillCertification .content .bodyContent .certificationDetails {
+			width: 100%;
+			line-height: 1.4;
+			padding-bottom: 40px;
+		}
+
+		.upskillCertification .content .bodyContent .certificationDetails .userData {
+			font-size: 30px;
+			font-weight: 500;
+			color: #27bbee;
+		}
+
+		.upskillCertification .content .bodyContent .certificationDetails p {
+			font-size: 20px;
+			font-weight: 400;
+			color: #262626;
+			margin: 0;
+		}
+
+		.upskillCertification .content .bodyContent .skills {
+			width: 100%;
+		}
+
+		.upskillCertification .content .bodyContent .skills h5 {
+			color: #262626;
+			font-size: 22px;
+		}
+
+		.upskillCertification .content .bodyContent .skills .skillList {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: 100%;
+			padding-left: 22px;
+		}
+
+		.upskillCertification .content .bodyContent .skills .skillList li {
+			color: #262626;
+			font-size: 16px;
+			padding-right: 40px;
+		}
+
+		.upskillCertification .content .bodyContent .skills .skillList li:last-child {
+			padding-right: 0;
+		}
+
+		.upskillCertification .content footer {
+			position: relative;
+			padding-top: 20px;
+			width: 100%;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			background-color: transparent;
+		}
+
+		.upskillCertification .content footer .badgelogo {
+			width: 12%;
+		}
+
+		.upskillCertification .content footer .badgelogo figure img {
+			width: 100%;
+		}
+
+		.upskillCertification .content footer .commonStyle {
+			width: 43%;
+			display: flex;
+			justify-content: center;
+		}
+
+		.upskillCertification .content footer .commonStyle .fooWrapper {
+			display: inline-block;
+			text-align: center;
+		}
+
+		.upskillCertification .content footer .commonStyle .fooWrapper .signature1 {
+			display: flex;
+			justify-content: center;
+			margin: 60px 0 10px 0 !important;
+		}
+
+		.upskillCertification .content footer .commonStyle .fooWrapper .signature1 img {
+			max-width: 50%;
+			background-color: transparent;
+		}
+
+		.upskillCertification .content footer .commonStyle .fooWrapper .signature2 {
+			display: flex;
+			justify-content: center;
+			margin: 0 0 10px 0 !important;
+		}
+
+		.upskillCertification .content footer .commonStyle .fooWrapper .signature2 img {
+			max-width: 38%;
+			background-color: transparent;
+		}
+
+		.upskillCertification .content footer .commonStyle .fooWrapper .heading {
+			color: #333;
+			font-size: 18px;
+			font-weight: 700;
+			line-height: normal;
+			margin: 0;
+			padding-bottom: 10px;
+		}
+
+		.upskillCertification .content footer .commonStyle .fooWrapper .position {
+			color: #000;
+			font-size: 12px;
+			font-weight: 300;
+			line-height: normal;
+			margin: 0;
+			display: block;
+		}
+
+		@media print {
+			.pagebreak {
+				page-break-before: always;
+			}
+			table:last-of-type {
+				page-break-after: auto;
+			}
+			html,
+			body {
+				height: 95%;
+			}
+			.pagebreakInternal {
+				page-break-inside: avoid;
+			}
+			/* page-break-after works, as well */
+		}
+	</style>
+</head>
+
+<body style="margin: 0;padding: 0;">
+	<div class="inside">
+	<div class="upskillCertification" id="content">
+		<figure class="leftTop">
+			<img src="./images/Assets.png" alt="" />
+		</figure>
+		<figure class="rightTop">
+			<img src="./images/Assets.png" alt="" />
+		</figure>
+		<figure class="rightBottom">
+			<img src="./images/Assets.png" alt="" />
+		</figure>
+		<div class="innerBorder">
+			<div class="content">
+				<figure class="innerAsset">
+					<img src="./images/Layer 2 copy 2@2x.png" alt="" />
+				</figure>
+				<header>
+					<figure class="logo">
+						<img src="./images/edutech_logo.png.png" alt="Logo" />
+					</figure>
+					<div class="code">
+					</div>
+				</header>
+				<div class="bodyContent">
+					<h1 class="certificateHeading">Certificate of Completion</h1>
+					<div class="certificationDetails">
+						<div class="userData" id="userID">Nancy</div>
+						<p>has successfully Completed
+							the program</p>
+						<div class="userData" id="courseID">Test Course</div>
+						<p>offered by L&T EduTech during the period <strong>2023-03-16</strong></p>
+					</div>
+					<div class="skills">
+						<h5>Skills acquired</h5>
+						<ul class="skillList">
+							<li>HTML</li>
+							<li>CSS</li>
+							<li>JS</li>
+						</ul>
+					</div>
+				</div>
+				<footer>
+					<div class="ccHead commonStyle">
+						<span class="fooWrapper">
+							<figure class="signature1">
+								<img src="./images/signature_1.png" alt="Signature-1" />
+							</figure>
+							<h5 class="heading">Chandramouleswaran M</h5>
+							<span class="position">Head - IT Skilling</span>
+						</span>
+					</div>
+					<div class="badgelogo">
+						<figure>
+							<img src="./images/Group 1.png" alt="">
+						</figure>
+					</div>
+					<div class="CEO commonStyle">
+						<span class="fooWrapper">
+							<figure class="signature2">
+								<img src="./images/signature_2.png" alt="Signature-2" />
+							</figure>
+							<h5 class="heading">Sabyasachi Das</h5>
+							<span class="position">Chief Executive Officer, L&T EduTech</span>
+						</span>
+					</div>
+				</footer>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+
+</html>
